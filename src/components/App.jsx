@@ -10,7 +10,7 @@ export const App = () => {
     const [breackLength, setbreackLength] = useState("5")
     const [working, setWorking] = useState(true)
     const [pause, setPause] = useState(true)
-    const [currentTimer, setCurrentTimer] = useState("")
+    const [currentTimer, setCurrentTimer] = useState(timer1)
     const dispatch= useDispatch()
     useEffect(() => {
         if (working && !pause) {
@@ -18,6 +18,7 @@ export const App = () => {
             if(timer1.minutes=== "00" && timer1.seconds === "00") {
               dispatch(ChangeTime2({minutes:breackLength,seconds:"00"}))
               setWorking(false)
+              setCurrentTimer(timer2)
             } else {
               
               let minutes= timer1.minutes
@@ -33,6 +34,7 @@ export const App = () => {
             if(timer2.minutes=== "00" && timer2.seconds === "00") {
               dispatch(ChangeTime1({minutes:workingLength,seconds:"00"}))
               setWorking(false)
+              setCurrentTimer(timer1)
             } else {
 
               let minutes= timer2.minutes
@@ -50,10 +52,28 @@ export const App = () => {
     <>
     <main>
         <section className="clockWrapper">
-            <Clock clock={timer1}/>
-            <Clock clock={timer2}/>
+          <Clock clock={currentTimer}/>
         </section>
-
+        <section className="timer-buttons-wrapper">
+          <article className="timer-work">
+            <button onClick={()=>{setworkingLength((parseInt(workingLength)+1).toString())}}>
+              up
+            </button>
+            <p className="timer-number">{workingLength}</p>
+            <button onClick={()=>{setworkingLength((parseInt(workingLength)-1).toString())}}>
+              down
+            </button>
+          </article>
+          <article className="timer-break">
+          <button onClick={()=>{setworkingLength((parseInt(breackLength)+1).toString())}}>
+              up
+            </button>
+            <p className="timer-number">{breackLength}</p>
+            <button onClick={()=>{setworkingLength((parseInt(breackLength)-1).toString())}}>
+              down
+            </button>
+          </article> 
+        </section>
     </main>
     
     
