@@ -4,12 +4,10 @@ const timersSlice=createSlice({
     name:"timers",
     initialState:{
         timer1:{
-            hours:"00",
             minutes:"25",
             seconds:"00",
         },
         timer2:{
-            hours:"00",
             minutes:"25",
             seconds:"00",
         }
