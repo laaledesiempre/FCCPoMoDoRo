@@ -1,13 +1,13 @@
 import React from 'react'
-
+import { useSelector } from 'react-redux'
 
 export const Clock = (props) => {
-    clockObject=props.clock
-
+    
+    const clockObject = useSelector((state)=>state.timersReducer.timer1)
   return (
     <>
     <section>
-    <p>{clockObject.hours+":"+clockObject.minutes+":"+clockObject.seconds}</p>
+    <p></p>
     </section> 
     </>
   )

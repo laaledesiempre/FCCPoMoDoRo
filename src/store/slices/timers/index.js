@@ -8,7 +8,7 @@ const timersSlice=createSlice({
             seconds:"00",
         },
         timer2:{
-            minutes:"25",
+            minutes:"05",
             seconds:"00",
         }
     },
@@ -21,8 +21,8 @@ const timersSlice=createSlice({
         }
     }
 })
-export const { setTime1, setTime2} = timers.actions;
-export const timersReducer = timers.reducer;
+export const { setTime1, setTime2} = timersSlice.actions;
+export const timersReducer = timersSlice.reducer;
 
 export const ChangeTime1=(data)=>(dispatch)=>{
     dispatch(setTime1(data))

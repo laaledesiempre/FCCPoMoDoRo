@@ -1,0 +1,24 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+body{
+    background-color: red;
+}
+main{
+    margin: 0 auto;
+}
+.timer-buttons-wrapper{
+    display: flex;
+}
+.timer-work{
+    display:flex;
+}
+.clock{
+    font-size: 4rem;
+    background-color: rgb(235, 207, 207);
+    padding: 1rem;
+    margin:0.5rem;
+    border-radius: 1rem;
+}
