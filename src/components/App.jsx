@@ -60,7 +60,7 @@ export const App = () => {
           <p className='clock'>{timerChanger(currentTimer)}</p>
         </section>
         <section className="timer-buttons-wrapper">
-          <article className="timer-work">
+          <article className="timer">
             <button onClick={()=>{setworkingLength((parseInt(workingLength)+1).toString())}}>
               up
             </button>
@@ -68,8 +68,9 @@ export const App = () => {
             <button onClick={()=>{setworkingLength((parseInt(workingLength)-1).toString())}}>
               down
             </button>
+            <p className="timer-number label">Work</p>
           </article>
-          <article className="timer-break">
+          <article className="timer">
           <button onClick={()=>{setbreackLength((parseInt(breackLength)+1).toString())}}>
               up
             </button>
@@ -77,6 +78,7 @@ export const App = () => {
             <button onClick={()=>{setbreackLength((parseInt(breackLength)-1).toString())}}>
               down
             </button>
+            <p className="timer-number label">Break</p>
           </article> 
         </section>
     </main>
